@@ -1,7 +1,10 @@
 package com.example.demo.dao.impl;
 
+import com.example.demo.controller.UserController;
 import com.example.demo.dao.UserDao;
 import com.example.demo.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +23,7 @@ import java.util.List;
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class UserDaoImpl implements UserDao {
+    Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -140,7 +144,7 @@ public class UserDaoImpl implements UserDao {
     public void refreshManaged(User user) {
         user.setName("refresh before!");
         refresh(user);
-        user.setName("refresh after!");
+        logger.info("user:"+user);
     }
     /**
      * 刷新删除态的对象

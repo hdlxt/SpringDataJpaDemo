@@ -192,10 +192,10 @@ public class UserController {
      *@param id
      * @return
      */
-    @RequestMapping("/removeNew/{id}")
-    public String removeNew(@PathVariable("id")Long id){
+    @RequestMapping("/removeNew")
+    public String removeNew(){
         try {
-            User user = new User().setId(id).setName("lxt").setNumber("007");
+            User user = new User().setName("lxt").setNumber("007");
             userDao.remove(user);
         }catch (Exception e){
             logger.error("删除(remove)一个new的对象!",e);
