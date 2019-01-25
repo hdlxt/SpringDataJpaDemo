@@ -18,19 +18,16 @@ import java.util.Date;
 @Table(name = "t_user")
 public class User {
 
+
+    private Long id;
+    private String name;
+    private String number;
+
     /**
      * 主键
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String number;
-    @CreatedDate
-    private Date createTime;
-    @LastModifiedDate
-    private Date updateTime;
-
     public Long getId() {
         return id;
     }
@@ -58,23 +55,6 @@ public class User {
         return this;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public User setCreateTime(Date createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public User setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
 
     @Override
     public String toString() {
@@ -82,8 +62,6 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", number='" + number + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
                 '}';
     }
 }
