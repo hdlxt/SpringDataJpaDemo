@@ -14,8 +14,6 @@ import java.util.List;
 
 /**
  * @author 刘小通
- * @Copy Right Information: 中科软科技股份有限公司
- * @Project: GTS4
  * @CreateDate: 2019/1/22 21:17
  * @history Sr Date Modified By Why & What is modified
  * 1.2019/1/22 刘小通 & new
